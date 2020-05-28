@@ -12,5 +12,9 @@ export default {
     SampleExtension: createPlugin('SampleExtension', {
         lazy: true,
         loader: () => import(/* webpackChunkName: "extensions/extension" */`./plugins/SampleExtension`)
+    }),
+    MagnifyExtension: createPlugin('MagnifyExtension', {
+        lazy: true,
+        loader: () => import(/* webpackChunkName: "extensions/extension" */`./plugins/MagnifyExtension`)
     })
 };

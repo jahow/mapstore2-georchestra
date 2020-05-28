@@ -13,7 +13,7 @@ import rootTranslations from "../../MapStore2/web/client/translations/data.en-US
 // add a translation file for every extension
 import bundleTranslations from "./bundle/translations/data.en-US.json";
 
-const pluginsConfig = ["Map", "Toolbar", "ZoomIn", "ZoomOut", "SampleExtension"];
+const pluginsConfig = ["Map", "Toolbar", "ZoomIn", "ZoomOut", "MagnifyExtension", "UndoPlugin", "RedoPlugin"];
 const LOCALE = "en-US";
 
 const startApp = (messages) => {
@@ -44,7 +44,7 @@ const startApp = (messages) => {
     };
     import(/* webpackChunkName: "extensions/index" */`../extensions/extensions`).then(extensions => {
         const Container = connect((state) => ({
-            pluginsState: { zoom: state.map && state.map.zoom },
+            pluginsState: state,
             pluginsConfig: pluginsConfig
         }))(PluginsContainer);
 
